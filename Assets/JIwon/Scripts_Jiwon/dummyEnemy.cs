@@ -43,14 +43,14 @@ public class dummyEnemy : MonoBehaviour
             print("데미지를 입음");
         }
     }
-    void OnControllerColliderHit(ControllerColliderHit hit)
+    /*void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if (hit.gameObject.tag== "AttackPoint")
         {
             Damaged();
             print("데미지를 입음");
         }
-    }
+    }*/
 
     /*private void OnTriggerEnter(Collider other)
     {

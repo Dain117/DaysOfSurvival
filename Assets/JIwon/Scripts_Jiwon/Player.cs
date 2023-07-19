@@ -28,11 +28,13 @@ public class Player : MonoBehaviour
 
     float throwPower = 5f;                  // 던질 힘
 
+    float time = 0;
     bool isJumping = false;
     float yVelocity = 0;
     bool isRightGrabbing = false;           // 오른손 물체를 잡고 있는지 여부
     bool isLeftGrabbing = false;            // 오른손 물체를 잡고 있는지 여부
     bool isAttack = false;
+    bool ishunger = false;
 
     #region 플레이어 상태(체력 등...)
     public int hp = 0;                      // 체력
@@ -46,20 +48,21 @@ public class Player : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         hp = 100;
         hunger = 100;
-        chill = 100;
         damage = 10;
 }
 
     void Update()
     {
+        time += Time.deltaTime;
+
         Move();
         Attack();
+        Hungry();
 
-        if (hp < 0)
-        {
+        if (hp <= 0)
             Destroy(gameObject);
-        }
 
+        #region 플레이어 왼손 오른손 Grab
         if (isRightGrabbing == false)
             TryRightGrab();
         else
@@ -69,6 +72,7 @@ public class Player : MonoBehaviour
             TryLeftGrab();
         else
             TryLeftUngrab();
+        #endregion
     }
 
     #region 플레이어 움직임
@@ -308,6 +312,7 @@ public class Player : MonoBehaviour
     }
     #endregion
 
+    #region 플레이어 공격과 데미지 입음을 처리
     void Attack()
     {
         if (ARAVRInput.Get(ARAVRInput.Button.Two, ARAVRInput.Controller.RTouch))
@@ -318,16 +323,48 @@ public class Player : MonoBehaviour
             attackPoint.SetActive(false);
     }
 
-    void Damaged()
+    void Damaged(int _Damage)
     {
-        hp -= damage;
+        hp -= _Damage;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if(other.gameObject.tag=="AttackPoint")
+        if (collision.gameObject.tag == "AttackPoint")
         {
-            Damaged();
+            Damaged(damage);
+            print("데미지를 입음");
         }
     }
+    #endregion
+
+    #region 배고픔처리
+    void Hungry()
+    {
+        if (!ishunger)
+        {
+            if (time > 2f)
+            {
+                hunger--;
+                time = 0;
+
+                Debug.Log(hunger);
+
+                if(hunger <= 0)
+                {
+                    ishunger = true;
+                }
+            }
+        }
+
+        else if (ishunger)
+        {
+            if (time > 2f)
+            {
+                Damaged(1);
+                time = 0;
+            }
+        }
+    }
+    #endregion
 }
