@@ -1,3 +1,4 @@
+using Photon.Pun.Demo.PunBasics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class Player : MonoBehaviour
 
     public LayerMask RightgrabbedLayer;     // 잡고있는 물체 종류
     public LayerMask LeftgrabbedLayer;      // 잡고있는 물체 종류
+    public GameObject attackPoint;
 
     public float speed = 5f;
     public float gravity = -20;
@@ -26,15 +28,19 @@ public class Player : MonoBehaviour
 
     float throwPower = 5f;                  // 던질 힘
 
+    float time = 0;
     bool isJumping = false;
     float yVelocity = 0;
     bool isRightGrabbing = false;           // 오른손 물체를 잡고 있는지 여부
     bool isLeftGrabbing = false;            // 오른손 물체를 잡고 있는지 여부
+    bool isAttack = false;
+    bool ishunger = false;
 
     #region 플레이어 상태(체력 등...)
     public int hp = 0;                      // 체력
     public int hunger = 0;                  // 허기
     public int chill = 0;                   // 한기
+    public int damage = 0;                  // 공격력
     #endregion
 
     void Start()
@@ -42,12 +48,36 @@ public class Player : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         hp = 100;
         hunger = 100;
-        chill = 100;
-    }
+        damage = 10;
+}
 
     void Update()
     {
-        #region 플레이어 움직임
+        time += Time.deltaTime;
+
+        Move();
+        Attack();
+        Hungry();
+
+        if (hp <= 0)
+            Destroy(gameObject);
+
+        #region 플레이어 왼손 오른손 Grab
+        if (isRightGrabbing == false)
+            TryRightGrab();
+        else
+            TryRightUngrab();
+
+        if (isLeftGrabbing == false)
+            TryLeftGrab();
+        else
+            TryLeftUngrab();
+        #endregion
+    }
+
+    #region 플레이어 움직임
+    void Move()
+    {
         float h = ARAVRInput.GetAxis("Horizontal");
         float v = ARAVRInput.GetAxis("Vertical");
 
@@ -80,18 +110,8 @@ public class Player : MonoBehaviour
         dir.y = yVelocity;
 
         characterController.Move(dir * speed * Time.deltaTime);
-        #endregion
-
-        if (isRightGrabbing == false)
-            TryRightGrab();
-        else
-            TryRightUngrab();
-
-        if (isLeftGrabbing == false)
-            TryLeftGrab();
-        else
-            TryLeftUngrab();
     }
+    #endregion
 
     #region 플레이어 오른손 Grab
     void TryRightGrab()
@@ -289,6 +309,62 @@ public class Player : MonoBehaviour
 
         LefftGrabbedObject.transform.position = _targetLocation;
         LefftGrabbedObject.transform.parent = ARAVRInput.LHand;
+    }
+    #endregion
+
+    #region 플레이어 공격과 데미지 입음을 처리
+    void Attack()
+    {
+        if (ARAVRInput.Get(ARAVRInput.Button.Two, ARAVRInput.Controller.RTouch))
+        {
+            attackPoint.SetActive(true);
+        }
+        else if(ARAVRInput.GetUp(ARAVRInput.Button.Two, ARAVRInput.Controller.RTouch))
+            attackPoint.SetActive(false);
+    }
+
+    void Damaged(int _Damage)
+    {
+        hp -= _Damage;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "AttackPoint")
+        {
+            Damaged(damage);
+            print("데미지를 입음");
+        }
+    }
+    #endregion
+
+    #region 배고픔처리
+    void Hungry()
+    {
+        if (!ishunger)
+        {
+            if (time > 2f)
+            {
+                hunger--;
+                time = 0;
+
+                Debug.Log(hunger);
+
+                if(hunger <= 0)
+                {
+                    ishunger = true;
+                }
+            }
+        }
+
+        else if (ishunger)
+        {
+            if (time > 2f)
+            {
+                Damaged(1);
+                time = 0;
+            }
+        }
     }
     #endregion
 }
