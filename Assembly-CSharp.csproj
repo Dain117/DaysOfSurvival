@@ -195,6 +195,7 @@
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\AppDeeplink\UI\CustomDebugUI.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\Locomotion\Scripts\CharacterCapsule.cs" />
     <Compile Include="Assets\Prefabs\GUI PRO Kit - Fantasy RPG\Scripts\PanelFantasyRPG.cs" />
+    <Compile Include="Assets\JIwon\Scripts_Jiwon\Player.cs" />
     <Compile Include="Assets\Untouchable\Photon\PhotonChat\Demos\DemoChat\FriendItem.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\SceneManager\Scripts\Spawnable.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportOrientationHandler360.cs" />

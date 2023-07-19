@@ -11,15 +11,12 @@ public class PlayerMove : MonoBehaviour
     float yVelocity = 0; //수직 속도
     public float jumpPower = 5f; //점프 크기
     bool isJumping = false;
-    // Start is called before the first frame update
+
     void Start()
     {
         cc = GetComponent<CharacterController>();
-      //  Cursor.visible = true;
-      //  Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
     void Update()
     {
         //사용자 입력에 따른 앞뒤좌우 이동구현
