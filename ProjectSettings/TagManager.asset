@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - AttackPoint
+  - Item
+  - UI
   layers:
   - Default
   - TransparentFX

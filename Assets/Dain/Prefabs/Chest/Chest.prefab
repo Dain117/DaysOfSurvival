@@ -332,9 +332,10 @@ GameObject:
   - component: {fileID: 6781941310617305815}
   - component: {fileID: 6161292764545481248}
   - component: {fileID: -9218927475789699212}
+  - component: {fileID: 2698314919255367155}
   m_Layer: 0
   m_Name: Chest
-  m_TagString: Untagged
+  m_TagString: AttackPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -346,8 +347,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4564522177268097604}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.365561, y: -0.12658381, z: 0.9634404}
+  m_LocalRotation: {x: -0, y: -0.7280913, z: -0, w: 0.6854803}
+  m_LocalPosition: {x: 2.77, y: -0.12658381, z: 2.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -355,7 +356,7 @@ Transform:
   - {fileID: 704225263381299076}
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -93.453, z: 0}
 --- !u!33 &4890986399110175508
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -455,6 +456,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &2698314919255367155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4564522177268097604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e95841cbab303440ab5a9a11439300f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
+  hpSlider: {fileID: 4048897251855498348}
+  effect: {fileID: 177130, guid: 37a14e1121b33c641b1361344a4a856a, type: 3}
+  chest: {fileID: 4564522177268097604}
+  Item:
+  - {fileID: 8475738054370995742, guid: 979a17893e66a4b4482c5a483304b993, type: 3}
+  - {fileID: 1157597431963335279, guid: 324667bdf9396004ab5d9ff027e25898, type: 3}
 --- !u!1 &7654668788607984474
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,11 +487,10 @@ GameObject:
   - component: {fileID: 7554479363323462190}
   - component: {fileID: 4852862085501327193}
   - component: {fileID: 3216049421824330979}
-  - component: {fileID: 1858569080453472971}
   - component: {fileID: 7425433261192402146}
   m_Layer: 0
   m_Name: SM_Prop_Chest_Lid_02
-  m_TagString: Untagged
+  m_TagString: AttackPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -562,23 +581,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1858569080453472971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7654668788607984474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e95841cbab303440ab5a9a11439300f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 30
-  hpSlider: {fileID: 4048897251855498348}
-  effect: {fileID: 177130, guid: 37a14e1121b33c641b1361344a4a856a, type: 3}
-  chest: {fileID: 4564522177268097604}
-  Item: []
 --- !u!65 &7425433261192402146
 BoxCollider:
   m_ObjectHideFlags: 0
