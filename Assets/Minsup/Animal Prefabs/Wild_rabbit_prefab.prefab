@@ -377,6 +377,7 @@ MonoBehaviour:
   runSpeed: 4
   detectionRange: 5
   maxHP: 20
+  meatPrefab: {fileID: 3969451212109746982, guid: 345811fee0649d6479c2c55cb379ec52, type: 3}
 --- !u!1 &1318075201681770165
 GameObject:
   m_ObjectHideFlags: 0

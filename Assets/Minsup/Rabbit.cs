@@ -36,8 +36,10 @@ public class Rabbit : MonoBehaviour
         navMeshObstacle = GetComponent<NavMeshObstacle>();
         navMeshObstacle.carving = true;
 
+        StartCoroutine(DieCoroutine());
+
         // 토끼의 초기 목적지 설정
-        SetRandomDestination();
+        //SetRandomDestination();
     }
 
     private void Update()
