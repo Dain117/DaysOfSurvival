@@ -11,8 +11,8 @@ public class Chest : MonoBehaviour
     public GameObject effect;
     public GameObject chest;
     public GameObject[] Item;
-    Vector3 position;
     Vector3 hpScale;
+    bool check;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +20,7 @@ public class Chest : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         hp = 30;
         hpScale =hpSlider.transform.localScale;
+        check = true;
     }
 
     // Update is called once per frame
@@ -32,7 +33,7 @@ public class Chest : MonoBehaviour
         else
             hpSlider.transform.localScale = hpScale;
 
-        if (hp<=0)
+        if (hp<=0 && check==true)
         {
             anim.SetTrigger("Open");
             StartCoroutine(ChestRemove());
@@ -52,8 +53,9 @@ public class Chest : MonoBehaviour
     IEnumerator ChestRemove()
     {
         Instantiate(effect, gameObject.transform);
-        yield return new WaitForSeconds(3f);
         Instantiate(Item[Random.RandomRange(0, Item.Length)], gameObject.transform.position, gameObject.transform.rotation);
+        check = false;
+        yield return new WaitForSeconds(3f);
         Destroy(chest);
 
     }
