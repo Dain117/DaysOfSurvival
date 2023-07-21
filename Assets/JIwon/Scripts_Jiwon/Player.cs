@@ -7,10 +7,12 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    GameManager isGameStart;
+    public GameManager gameManager;
     public CharacterController characterController;
+
     GameObject RightGrabbedObject;          // 잡고있는 물체
     GameObject LefftGrabbedObject;
+    
     Vector3 prevPos;                        // 이전 위치
     Quaternion prevRot;                     // 이전 방향
 
@@ -43,7 +45,7 @@ public class Player : MonoBehaviour
 
     #region 플레이어 상태(체력 등...)
     public int hp = 0;                      // 체력
-    public int Maxhunger = 100;                  // 허기
+    public int Maxhunger = 100;             // 허기
     public int currentHunger;
     public int chill = 0;                   // 한기
     public int damage = 0;                  // 공격력
@@ -54,7 +56,8 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        isGameStart = FindObjectOfType<GameManager>();
+        gameManager = FindObjectOfType<GameManager>();
+        gameObject.transform.position = gameManager.spawnPoint.transform.position;
         characterController = GetComponent<CharacterController>();
         hp = 100;
         currentHunger = 100;
@@ -334,7 +337,7 @@ public class Player : MonoBehaviour
     #region 플레이어 공격과 데미지 입음을 처리
     public virtual void Attack()
     {
-        if (isGameStart.isGameStart)
+        if (gameManager.isGameStart)
         {
             if (ARAVRInput.Get(ARAVRInput.Button.Two, ARAVRInput.Controller.RTouch))
             {
