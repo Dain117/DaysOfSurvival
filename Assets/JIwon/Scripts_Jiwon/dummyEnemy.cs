@@ -1,16 +1,24 @@
 using Photon.Pun.Demo.PunBasics;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class dummyEnemy : MonoBehaviour
 {
+    public GameObject PlayerBody;
+    public GameObject DeathAnim;
+    Transform objPosition;
+
+    bool isDead = false;
+
     #region 플레이어 상태(체력 등...)
     public int hp = 0;                      // 체력
     public int hunger = 0;                  // 허기
     public int chill = 0;                   // 한기
     public int damage = 0;                  // 공격력
+    int weaponDamage = 150;
     #endregion
 
     void Start()
@@ -23,40 +31,42 @@ public class dummyEnemy : MonoBehaviour
 
     void Update()
     {
+        objPosition = gameObject.transform;
+
         if (hp <= 0)
         {
-            Destroy(gameObject);
+            PlayerBody.SetActive(false);
+
+            if (isDead == false)
+            {
+                GameObject dead = Instantiate(DeathAnim);
+                dead.transform.position = objPosition.position;
+                isDead = true;
+            }
         }
     }
    
-    void Damaged()
+    void Damaged(int _damage)
     {
-        hp -= damage;
+        hp -= _damage;
         Debug.Log("damage");
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "AttackPoint")
+        if (hp > 0)
         {
-            Damaged();
-            print("데미지를 입음");
+            if (collision.gameObject.tag == "AttackPoint")
+            {
+                Damaged(damage);
+                print("데미지를 입음");
+            }
+
+            if (collision.gameObject.tag == "WeaponAttack")
+            {
+                Damaged(weaponDamage);
+                print("데미지를 입음");
+            }
         }
     }
-    /*void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        if (hit.gameObject.tag== "AttackPoint")
-        {
-            Damaged();
-            print("데미지를 입음");
-        }
-    }*/
-
-    /*private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "AttackPoint")
-        {
-            Damaged();
-        }
-    }*/
 }

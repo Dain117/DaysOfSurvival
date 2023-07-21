@@ -507,9 +507,8 @@ MonoBehaviour:
   runSpeed: 5
   detectionRange: 8
   maxHP: 30
-  attackRate: 3
-  attackRange: 2
   attackDamage: 5
+  attackInterval: 3
   meatPrefab: {fileID: 0}
 --- !u!1 &2380581516944689017
 GameObject:
