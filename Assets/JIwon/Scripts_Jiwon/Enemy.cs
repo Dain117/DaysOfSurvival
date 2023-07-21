@@ -1,27 +1,21 @@
 using Photon.Pun.Demo.PunBasics;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
-    public GameManager gameManager;
-    public CharacterController characterController;
-
+    CharacterController characterController;
     GameObject RightGrabbedObject;          // 잡고있는 물체
     GameObject LefftGrabbedObject;
-    
     Vector3 prevPos;                        // 이전 위치
     Quaternion prevRot;                     // 이전 방향
 
     public LayerMask RightgrabbedLayer;     // 잡고있는 물체 종류
     public LayerMask LeftgrabbedLayer;      // 잡고있는 물체 종류
     public GameObject attackPoint;
-    public GameObject PlayerBody;
-    public GameObject DeathAnim;
-    public Transform objPosition;
+    public GameObject weaponAttack;
 
     public float speed = 5f;
     public float gravity = -20;
@@ -35,7 +29,7 @@ public class Player : MonoBehaviour
 
     float throwPower = 5f;                  // 던질 힘
 
-    protected float time = 0;
+    float time = 0;
     bool isJumping = false;
     float yVelocity = 0;
     public bool isRightGrabbing = false;           // 오른손 물체를 잡고 있는지 여부
@@ -45,24 +39,18 @@ public class Player : MonoBehaviour
 
     #region 플레이어 상태(체력 등...)
     public int hp = 0;                      // 체력
-    public int Maxhunger = 100;             // 허기
-    public int currentHunger;
+    public int hunger = 0;                  // 허기
     public int chill = 0;                   // 한기
     public int damage = 0;                  // 공격력
-    int weaponDamage = 150;                 // 무기에 받는 피해
-
-    public bool isDead = false;
     #endregion
 
     void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
-        gameObject.transform.position = gameManager.spawnPoint.transform.position;
         characterController = GetComponent<CharacterController>();
         hp = 100;
-        currentHunger = 100;
+        hunger = 100;
         damage = 10;
-}
+    }
 
     void Update()
     {
@@ -71,18 +59,10 @@ public class Player : MonoBehaviour
         Move();
         Attack();
         Hungry();
+        WeaponAttack();
 
         if (hp <= 0)
-        {
-            PlayerBody.SetActive(false);
-
-            if (isDead == false)
-            {
-                GameObject dead = Instantiate(DeathAnim);
-                dead.transform.position = objPosition.position;
-                isDead = true;
-            }
-        }
+            Destroy(gameObject);
 
         #region 플레이어 왼손 오른손 Grab
         if (isRightGrabbing == false)
@@ -210,7 +190,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public IEnumerator RightGrabbingAnimation()
+    IEnumerator RightGrabbingAnimation()
     {
         RightGrabbedObject.GetComponent<Rigidbody>().isKinematic = true;
         prevPos = ARAVRInput.RHandPosition;
@@ -309,7 +289,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public IEnumerator LeftGrabbingAnimation()
+    IEnumerator LeftGrabbingAnimation()
     {
         LefftGrabbedObject.GetComponent<Rigidbody>().isKinematic = true;
         prevPos = ARAVRInput.LHandPosition;
@@ -335,17 +315,22 @@ public class Player : MonoBehaviour
     #endregion
 
     #region 플레이어 공격과 데미지 입음을 처리
-    public virtual void Attack()
+    public void Attack()
     {
-        if (gameManager.isGameStart)
+        if (ARAVRInput.Get(ARAVRInput.Button.Two, ARAVRInput.Controller.RTouch))
         {
-            if (ARAVRInput.Get(ARAVRInput.Button.Two, ARAVRInput.Controller.RTouch))
-            {
-                attackPoint.SetActive(true);
-            }
-            else if (ARAVRInput.GetUp(ARAVRInput.Button.Two, ARAVRInput.Controller.RTouch))
-                attackPoint.SetActive(false);
+            attackPoint.SetActive(true);
         }
+        else if (ARAVRInput.GetUp(ARAVRInput.Button.Two, ARAVRInput.Controller.RTouch))
+            attackPoint.SetActive(false);
+    }
+
+    void WeaponAttack()
+    {
+        if (ARAVRInput.Get(ARAVRInput.Button.Two, ARAVRInput.Controller.LTouch))
+            weaponAttack.SetActive(true);
+        else if (ARAVRInput.GetUp(ARAVRInput.Button.Two, ARAVRInput.Controller.LTouch))
+            weaponAttack.SetActive(false);
     }
 
     public void Damaged(int _Damage)
@@ -353,17 +338,11 @@ public class Player : MonoBehaviour
         hp -= _Damage;
     }
 
-    public virtual void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "AttackPoint")
         {
             Damaged(damage);
-            print("데미지를 입음");
-
-        }
-        if (collision.gameObject.tag == "WeaponAttack")
-        {
-            Damaged(weaponDamage);
             print("데미지를 입음");
         }
     }
@@ -376,12 +355,12 @@ public class Player : MonoBehaviour
         {
             if (time > 2f)
             {
-                currentHunger -= 1;
+                hunger--;
                 time = 0;
 
-                Debug.Log(currentHunger);
+                Debug.Log(hunger);
 
-                if(currentHunger <= 0)
+                if (hunger <= 0)
                 {
                     ishunger = true;
                 }
@@ -392,17 +371,10 @@ public class Player : MonoBehaviour
         {
             if (time > 2f)
             {
-                Damaged(10);
+                Damaged(1);
                 time = 0;
             }
         }
-    }
-
-    public void IncreaseHunger(int amount)
-    {
-        currentHunger += amount;
-
-        currentHunger = Mathf.Clamp(currentHunger, 0, Maxhunger);
     }
     #endregion
 }
