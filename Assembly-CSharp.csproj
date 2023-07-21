@@ -61,10 +61,12 @@
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\PanelHMDFollower.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrainCrossingController.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\SceneManager\Scripts\SimpleResizer\SimpleResizable.cs" />
+    <Compile Include="Assets\Dain\Scripts\PlayerDain.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\SceneManager\Scripts\MyCustomSceneModelLoader.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\HandsInteraction\Scripts\InteractableRegistry.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\Passthrough\Scripts\SPPquad.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\Video\Plugins\Android\NativeVideoPlayer.cs" />
+    <Compile Include="Assets\Dain\Scripts\TimeText.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\DistanceGrab\Scripts\GrabbableCrosshair.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportAimHandlerLaser.cs" />
     <Compile Include="Assets\Untouchable\Photon\PhotonChat\Demos\Common\EventSystemSpawner.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\SpatialAnchor\Scripts\SpatialAnchorLoader.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\HandsInteraction\Scripts\InteractableToolsCreator.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\TouchPro\Scripts\Ui\UiSceneMenu.cs" />
+    <Compile Include="Assets\Dain\Scripts\ActionController.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\StartScene\Scripts\StartMenu.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\Passthrough\Scripts\PassthroughController.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\TouchPro\Scripts\Ui\UiAxis1dInspector.cs" />
@@ -115,6 +118,7 @@
     <Compile Include="Assets\Untouchable\Photon\PhotonChat\Demos\Common\TextToggleIsOnTransition.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\DistanceGrab\Scripts\DistanceGrabberSample.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportPoint.cs" />
+    <Compile Include="Assets\Dain\Scripts\Slot.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\Passthrough\Scripts\AugmentedObject.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportSupport.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportTransitionWarp.cs" />
@@ -147,9 +151,11 @@
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\CustomHands\Scripts\HandPose.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\SpatialAnchor\Scripts\AnchorUIManager.cs" />
     <Compile Include="Assets\Dain\Scripts\ItemSpawn.cs" />
+    <Compile Include="Assets\Dain\Scripts\Healing.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\HandsInteraction\Scripts\Interactable.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\HandsInteraction\Scripts\Tools\InteractableTool.cs" />
     <Compile Include="Assets\Dain\Scripts\Chest.cs" />
+    <Compile Include="Assets\Dain\Scripts\Inventory.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\OVROverlay\Scripts\OVROverlaySample.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\Passthrough\Scripts\BrushController.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\HandsInteraction\Scripts\Tools\InteractableToolView.cs" />
@@ -169,6 +175,7 @@
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\Passthrough\Scripts\GrabObject.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\TouchPro\Scripts\Ui\UiDeviceInspector.cs" />
     <Compile Include="Assets\Dain\Scripts\ButtonManger.cs" />
+    <Compile Include="Assets\Dain\Scripts\ItemPickUp.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrainLocomotive.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\Passthrough\Scripts\PassthroughSurface.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\DebugUI\Scripts\HandedInputSelector.cs" />
@@ -221,6 +228,7 @@
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportOrientationHandler.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrainButtonVisualController.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\SpatialAnchor\Scripts\AnchorSession.cs" />
+    <Compile Include="Assets\Dain\Scripts\Meat.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Untouchable\Oculus\SampleFramework\Usage\HandsTrainExample\Shaders\XingLightShader.shader" />

@@ -2,22 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour
+[CreateAssetMenu(fileName ="New Item", menuName ="New Item/item")]
+public class Item : ScriptableObject
 {
+    public string itemName; //아이템의 이름
+    public Sprite itemImage; //아이템의 이미지
+    public GameObject itemPrefab; //아이템의 프리팹
 
-    // Start is called before the first frame update
+    
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("아이템 부딪힘");
-            Destroy(gameObject);
-        }
-    }
-        public void RunItem()
-    {
-        print("아이템사용");
-        Destroy(gameObject);
-    }
+    
 }
