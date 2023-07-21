@@ -79,6 +79,7 @@
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\Passthrough\Scripts\PassthroughBrush.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\HandsInteraction\Scripts\Tools\PinchStateModule.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\SceneManager\Scripts\BouncingBallLogic.cs" />
+    <Compile Include="Assets\Minsup\Rabbit.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\Passthrough\Scripts\PassthroughStyler.cs" />
     <Compile Include="Assets\Untouchable\Photon\PhotonChat\Demos\DemoChat\ChannelSelector.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\SpatialAnchor\Scripts\SpatialAnchorLoader.cs" />
@@ -122,9 +123,11 @@
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportSupport.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportTransitionWarp.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\HandsInteraction\Scripts\Tools\FingerTipPokeTool.cs" />
+    <Compile Include="Assets\Minsup\Meat1.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportAimVisualLaser.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\Passthrough\Scripts\SelectivePassthroughExperience.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportAimHandlerParabolic.cs" />
+    <Compile Include="Assets\Minsup\Wolf.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\Video\Scripts\MoviePlayerSample.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\SceneManager\Scripts\PassthroughPlayInEditor.cs" />
     <Compile Include="Assets\Untouchable\Photon\PhotonChat\Demos\Common\TextButtonTransition.cs" />
@@ -138,6 +141,7 @@
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\HandsActiveChecker.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\Video\Scripts\VectorUtil.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\Passthrough\Scripts\ObjectManipulator.cs" />
+    <Compile Include="Assets\Minsup\Deer.cs" />
     <Compile Include="Assets\Untouchable\Plugins\WebSocket\SocketWebTcp.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\Passthrough\Scripts\HandMeshUI.cs" />
