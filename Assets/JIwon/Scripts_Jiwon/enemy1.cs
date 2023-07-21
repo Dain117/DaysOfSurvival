@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class enemy1 : Player
 {
-    GameManager isGameStart;
     public GameObject weaponAttack;
 
     void Start()
     {
-        isGameStart = FindObjectOfType<GameManager>();
-        characterController = GetComponent<CharacterController>();
+        gameManager = FindObjectOfType<GameManager>();
+        gameObject.transform.position = gameManager.spawnPoint.transform.position;
+        characterController = FindObjectOfType<CharacterController>();
         hp = 150;
         currentHunger = 100;
         damage = 10;
@@ -52,7 +52,7 @@ public class enemy1 : Player
 
     public override void Attack()
     {
-        if (isGameStart.isGameStart)
+        if (gameManager.isGameStart)
         {
             if (ARAVRInput.Get(ARAVRInput.Button.Two, ARAVRInput.Controller.RTouch))
                 attackPoint.SetActive(true);

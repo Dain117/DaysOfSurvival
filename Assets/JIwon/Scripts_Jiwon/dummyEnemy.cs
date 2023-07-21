@@ -9,6 +9,8 @@ public class dummyEnemy : MonoBehaviour
 {
     public GameObject PlayerBody;
     public GameObject DeathAnim;
+
+    GameManager manager;
     Transform objPosition;
 
     bool isDead = false;
@@ -23,6 +25,8 @@ public class dummyEnemy : MonoBehaviour
 
     void Start()
     {
+        manager = FindObjectOfType<GameManager>();
+        gameObject.transform.position = manager.spawnPoint.transform.position;
         hp = 100;
         hunger = 100;
         chill = 100;

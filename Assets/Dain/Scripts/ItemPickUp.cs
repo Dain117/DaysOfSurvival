@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ItemPickUp : MonoBehaviour
 {
@@ -10,12 +11,16 @@ public class ItemPickUp : MonoBehaviour
     public Image usedImage;
     public Image HGImage;
     public Item item;
+    public static int twigCount;
+    private TextMeshProUGUI questUI;
 
     private void Start()
     {
         itemImage = GameObject.Find("ItemImg").GetComponent<Healing>().GetComponent<Image>();
         usedImage = GameObject.Find("UsedImg").GetComponent<Meat>().GetComponent<Image>();
         HGImage = GameObject.Find("HGImg").GetComponent<Meat>().GetComponent<Image>();
+        HGImage = GameObject.Find("HGImg").GetComponent<Meat>().GetComponent<Image>();
+        questUI = GameObject.Find("QuestText").GetComponent<TextMeshProUGUI>();
     }
 
     private void Update()
@@ -38,6 +43,10 @@ public class ItemPickUp : MonoBehaviour
                 HGImage.sprite = gameObject.GetComponent<ItemPickUp>().item.itemImage;
                 Destroy(gameObject);
             }
+            else if (gameObject.GetComponent<ItemPickUp>().item.itemName == "Twig")
+                Destroy(gameObject);
+                twigCount++;
+            questUI.text = $"Let's collect twig\n20 / {twigCount}";
         }
     }
 
