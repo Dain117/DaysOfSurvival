@@ -14,19 +14,24 @@ public class ButtonManger : MonoBehaviour
         menu.SetActive(false);
         Control.SetActive(false);
         Option.SetActive(false);
+        Login.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public void MenuOpen()
     {
         menu.SetActive(true);
+        Time.timeScale = 0f;
     }
     public void ControlOpen()
     {
         Control.SetActive(true);
+        Time.timeScale = 0f;
     }
     public void OptionOpen()
     {
         Option.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public void Close()
@@ -35,18 +40,13 @@ public class ButtonManger : MonoBehaviour
         Control.SetActive(false);
         Option.SetActive(false);
         Login.SetActive(false);
-    }
-
-    private void Update()
-    {
-        if(Input.GetKeyUp(KeyCode.Escape)) 
-        {
-            MenuOpen();
-        }
+        Time.timeScale = 1f;
     }
 
     public void Exit()
     {
         Application.Quit();
+        Time.timeScale = 1f;
+
     }    
 }
