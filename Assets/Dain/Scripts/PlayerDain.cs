@@ -357,7 +357,7 @@ public class PlayerDain : MonoBehaviour
             attackPoint.SetActive(false);
     }
 
-    void Damaged(int _Damage)
+    public void Damaged(int _Damage)
     {
         hp -= _Damage;
     }
