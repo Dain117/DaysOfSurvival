@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class Deer : MonoBehaviour
 {
-    public float normalSpeed = 4f; // 사슴의 기본 속도
-    public float runSpeed = 6f; // 사슴의 도망 속도
+    public float normalSpeed = 3.5f; // 사슴의 기본 속도
+    public float runSpeed = 5.5f; // 사슴의 도망 속도
     public float detectionRange = 8f; // 플레이어를 감지하는 거리
     public int maxHP = 40; // 사슴의 최대 체력
 

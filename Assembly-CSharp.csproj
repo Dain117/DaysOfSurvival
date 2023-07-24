@@ -119,6 +119,7 @@
     <Compile Include="Assets\Dain\Scripts\MagneticField.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\DistanceGrab\Scripts\DistanceGrabberSample.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportPoint.cs" />
+    <Compile Include="Assets\Minsup\Meat2.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\Passthrough\Scripts\AugmentedObject.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportSupport.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportTransitionWarp.cs" />
@@ -154,8 +155,8 @@
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\CustomHands\Scripts\HandPose.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\SpatialAnchor\Scripts\AnchorUIManager.cs" />
     <Compile Include="Assets\Dain\Scripts\ItemSpawn.cs" />
-    <Compile Include="Assets\Dain\Scripts\Healing.cs" />
     <Compile Include="Assets\Dain\Scripts\QuestText.cs" />
+    <Compile Include="Assets\Dain\Scripts\Healing.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\HandsInteraction\Scripts\Interactable.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\HandsInteraction\Scripts\Tools\InteractableTool.cs" />
     <Compile Include="Assets\Dain\Scripts\Chest.cs" />
@@ -231,6 +232,7 @@
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrainTrack.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportOrientationHandler.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrainButtonVisualController.cs" />
+    <Compile Include="Assets\Minsup\AnimalSpawner.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\SpatialAnchor\Scripts\AnchorSession.cs" />
     <Compile Include="Assets\Dain\Scripts\Meat.cs" />
   </ItemGroup>

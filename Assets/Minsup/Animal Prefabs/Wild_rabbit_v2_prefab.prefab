@@ -487,8 +487,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 154d2f69943f7e34b80877fb3705dbc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalSpeed: 2
-  runSpeed: 4
+  normalSpeed: 1
+  runSpeed: 3
   detectionRange: 5
   maxHP: 20
   meatPrefab: {fileID: 1514259955014810247, guid: c1407df61204ac24c8420568fc4f4469, type: 3}

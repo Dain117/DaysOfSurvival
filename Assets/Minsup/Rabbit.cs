@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Rabbit : MonoBehaviour
 {
-    public float normalSpeed = 2f; // 토끼의 기본 속도
-    public float runSpeed = 4f; // 토끼의 도망 속도
+    public float normalSpeed = 1f; // 토끼의 기본 속도
+    public float runSpeed = 3f; // 토끼의 도망 속도
     public float detectionRange = 5f; // 플레이어를 감지하는 거리
     public int maxHP = 20; // 토끼의 최대 체력
 
