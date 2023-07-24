@@ -19,10 +19,10 @@ public class ColorManager : MonoBehaviour
     void Start()
     {
         Neck = GameObject.Find("Neck").GetComponent<SkinnedMeshRenderer>();
-        Head = GameObject.Find("Head").GetComponent<SkinnedMeshRenderer>();
+        Head = GameObject.Find("PHead").GetComponent<SkinnedMeshRenderer>();
         BodyChest = GameObject.Find("BodyChest").GetComponent<SkinnedMeshRenderer>();
         Arms = GameObject.Find("Arms").GetComponent<SkinnedMeshRenderer>();
-        Hands = GameObject.Find("Hands").GetComponent<SkinnedMeshRenderer>();
+        Hands = GameObject.Find("PHands").GetComponent<SkinnedMeshRenderer>();
         Legs = GameObject.Find("Legs").GetComponent<SkinnedMeshRenderer>();
         Feet = GameObject.Find("Feet").GetComponent<SkinnedMeshRenderer>();
         Underwear = GameObject.Find("Underwear").GetComponent<SkinnedMeshRenderer>();
@@ -38,73 +38,73 @@ public class ColorManager : MonoBehaviour
 
     public void SkinRed()
     {
-        Neck.material.color = Color.red;
-        Head.material.color = Color.red;
-        BodyChest.material.color = Color.red;
-        Arms.material.color = Color.red;
-        Hands.material.color = Color.red;
-        Legs.material.color = Color.red;
-        Feet.material.color = Color.red;
+        Neck.material.color = new Color(0.7f, 0.2f, 0.2f);
+        Head.material.color = new Color(0.7f, 0.2f, 0.2f);
+        BodyChest.material.color = new Color(0.7f, 0.2f, 0.2f);
+        Arms.material.color = new Color(0.7f, 0.2f, 0.2f);
+        Hands.material.color = new Color(0.7f, 0.2f, 0.2f);
+        Legs.material.color = new Color(0.7f, 0.2f, 0.2f);
+        Feet.material.color = new Color(0.7f, 0.2f, 0.2f);
     }
     public void SkinGreen()
     {
-        Neck.material.color = Color.green;
-        Head.material.color = Color.green;
-        BodyChest.material.color = Color.green;
-        Arms.material.color = Color.green;
-        Hands.material.color = Color.green;
-        Legs.material.color = Color.green;
-        Feet.material.color = Color.green;
+        Neck.material.color = new Color(0.3f, 0.6f, 0.3f);
+        Head.material.color = new Color(0.3f, 0.6f, 0.3f);
+        BodyChest.material.color = new Color(0.3f, 0.6f, 0.3f);
+        Arms.material.color = new Color(0.3f, 0.6f, 0.3f);
+        Hands.material.color = new Color(0.3f, 0.6f, 0.3f);
+        Legs.material.color = new Color(0.3f, 0.6f, 0.3f);
+        Feet.material.color = new Color(0.3f, 0.6f, 0.3f);
     }
     public void SkinGray()
     {
-        Neck.material.color = Color.gray;
-        Head.material.color = Color.gray;
-        BodyChest.material.color = Color.gray;
-        Arms.material.color = Color.gray;
-        Hands.material.color = Color.gray;
-        Legs.material.color = Color.gray;
-        Feet.material.color = Color.gray;
+        Neck.material.color = new Color(0.5f, 0.5f, 0.5f);
+        Head.material.color = new Color(0.5f, 0.5f, 0.5f);
+        BodyChest.material.color = new Color(0.5f, 0.5f, 0.5f);
+        Arms.material.color = new Color(0.5f, 0.5f, 0.5f);
+        Hands.material.color = new Color(0.5f, 0.5f, 0.5f);
+        Legs.material.color = new Color(0.5f, 0.5f, 0.5f);
+        Feet.material.color = new Color(0.5f, 0.5f, 0.5f);
     }
         public void SkinBlue()
     {
-            Neck.material.color = Color.blue;
-            Head.material.color = Color.blue;
-            BodyChest.material.color = Color.blue;
-            Arms.material.color = Color.blue;
-            Hands.material.color = Color.blue;
-            Legs.material.color = Color.blue;
-            Feet.material.color = Color.blue;
-        }
+            Neck.material.color = new Color(0.4f, 0.4f, 0.6f);
+        Head.material.color = new Color(0.4f, 0.4f, 0.6f);
+        BodyChest.material.color = new Color(0.4f, 0.4f, 0.6f);
+        Arms.material.color = new Color(0.4f, 0.4f, 0.6f);
+        Hands.material.color = new Color(0.4f, 0.4f, 0.6f);
+        Legs.material.color = new Color(0.4f, 0.4f, 0.6f);
+        Feet.material.color = new Color(0.4f, 0.4f, 0.6f);
+    }
     public void SkinWhite()
     {
-            Neck.material.color = Color.white;
-            Head.material.color = Color.white;
-            BodyChest.material.color = Color.white;
-            Arms.material.color = Color.white;
-            Hands.material.color = Color.white;
-            Legs.material.color = Color.white;
-            Feet.material.color = Color.white;
-        }
+            Neck.material.color = new Color(0.8f, 0.8f, 0.7f);
+        Head.material.color = new Color(0.8f, 0.8f, 0.7f);
+        BodyChest.material.color = new Color(0.8f, 0.8f, 0.7f);
+        Arms.material.color = new Color(0.8f, 0.8f, 0.7f);
+        Hands.material.color = new Color(0.8f, 0.8f, 0.7f);
+        Legs.material.color = new Color(0.8f, 0.8f, 0.7f);
+        Feet.material.color = new Color(0.8f, 0.8f, 0.7f);
+    }
     public void SkinBlack()
     {
-            Neck.material.color = Color.black;
-            Head.material.color = Color.black;
-            BodyChest.material.color = Color.black;
-            Arms.material.color = Color.black;
-            Hands.material.color = Color.black;
-            Legs.material.color = Color.black;
-            Feet.material.color = Color.black;
-        }
+            Neck.material.color = new Color(0.2f, 0.1f, 0.1f);
+        Head.material.color = new Color(0.2f, 0.1f, 0.1f);
+        BodyChest.material.color = new Color(0.2f, 0.1f, 0.1f);
+        Arms.material.color = new Color(0.2f, 0.1f, 0.1f);
+        Hands.material.color = new Color(0.2f, 0.1f, 0.1f);
+        Legs.material.color = new Color(0.2f, 0.1f, 0.1f);
+        Feet.material.color = new Color(0.2f, 0.1f, 0.1f);
+    }
     public void SkinYellow()
     {
-        Neck.material.color = Color.yellow;
-        Head.material.color = Color.yellow;
-        BodyChest.material.color = Color.yellow;
-        Arms.material.color = Color.yellow;
-        Hands.material.color = Color.yellow;
-        Legs.material.color = Color.yellow;
-        Feet.material.color = Color.yellow;
+        Neck.material.color = new Color(0.6f, 0.5f, 0.3f);
+        Head.material.color = new Color(0.6f, 0.5f, 0.3f);
+        BodyChest.material.color = new Color(0.6f, 0.5f, 0.3f);
+        Arms.material.color = new Color(0.6f, 0.5f, 0.3f);
+        Hands.material.color = new Color(0.6f, 0.5f, 0.3f);
+        Legs.material.color = new Color(0.6f, 0.5f, 0.3f);
+        Feet.material.color = new Color(0.6f, 0.5f, 0.3f);
     }
     public void SkinBasic()
     {
@@ -119,33 +119,33 @@ public class ColorManager : MonoBehaviour
 
     public void UnderRed()
     {
-        Underwear.material.color = Color.red;
+        Underwear.material.color = new Color(0.7f, 0.2f, 0.2f);
     }
     public void UnderGreen()
     {
-        Underwear.material.color = Color.green;
+        Underwear.material.color = new Color(0.3f, 0.6f, 0.3f);
     }
     public void UnderGray()
     {
-        Underwear.material.color = Color.gray;
+        Underwear.material.color = new Color(0.5f, 0.5f, 0.5f);
     }
     public void UnderBlue()
     {
-        Underwear.material.color = Color.blue;
+        Underwear.material.color = new Color(0.4f, 0.4f, 0.6f);
     }
     public void UnderBlack()
     {
-        Underwear.material.color = Color.black;
+        Underwear.material.color = new Color(0.2f, 0.1f, 0.1f);
     }
     public void UnderYellow()
     {
-        Underwear.material.color = Color.yellow;
+        Underwear.material.color = new Color(0.6f, 0.5f, 0.3f);
     }
     public void UnderWhite()
     {
-        Underwear.material.color = Color.white;
+        Underwear.material.color = new Color(0.8f, 0.8f, 0.7f); 
     }
-    public void UnderBasic()
+        public void UnderBasic()
     {
         Underwear.material.color = basic;
     }

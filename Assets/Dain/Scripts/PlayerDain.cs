@@ -56,10 +56,6 @@ public class PlayerDain : MonoBehaviour
         hunger = 100;
         damage = 10;
 
-        itemImage = GameObject.Find("ItemImg").GetComponent<Healing>().GetComponent<Image>();
-        usedImage = GameObject.Find("UsedImg").GetComponent<Meat>().GetComponent<Image>();
-        HGImage = GameObject.Find("HGImg").GetComponent<Meat>().GetComponent<Image>();
-
     }
 
     void Update()
@@ -90,6 +86,7 @@ public class PlayerDain : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            itemImage = GameObject.Find("ItemImg").GetComponent<Healing>().GetComponent<Image>();
             if (itemImage.sprite.name == "equip_icon_potion_red_2")
             {
                 hp += 50;
@@ -99,8 +96,10 @@ public class PlayerDain : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.W))
-            
+
         {
+            HGImage = GameObject.Find("HGImg").GetComponent<Meat>().GetComponent<Image>();
+            usedImage = GameObject.Find("UsedImg").GetComponent<Meat>().GetComponent<Image>();
             if (HGImage.sprite.name == "icon_food_meat")
             {
                 hunger += 50;
@@ -118,7 +117,7 @@ public class PlayerDain : MonoBehaviour
 
         Vector3 dir = new Vector3(h, 0, v);
 
-        //dir = Camera.main.transform.TransformDirection(dir);
+        dir = Camera.main.transform.TransformDirection(dir);
 
         yVelocity += gravity * Time.deltaTime;
 

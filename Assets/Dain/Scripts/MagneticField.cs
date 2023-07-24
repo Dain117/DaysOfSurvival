@@ -65,7 +65,7 @@ public class MagneticField : MonoBehaviour
         time += Time.deltaTime;
         while (time > 1.0f)
         {
-            GameObject.Find("Player").GetComponent<PlayerDain>().hp += 5;
+            Player.hp += 5;
             time = 0;
             yield return null;
         }

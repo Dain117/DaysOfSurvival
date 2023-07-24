@@ -23,6 +23,13 @@ public class Player : MonoBehaviour
     public GameObject DeathAnim;
     public Transform objPosition;
 
+    public Slider HP;
+    public Slider HG;
+
+    public Image itemImage;
+    public Image usedImage;
+    public Image HGImage;
+
     public float speed = 5f;
     public float gravity = -20;
     public float jumpPower = 5;
@@ -44,11 +51,11 @@ public class Player : MonoBehaviour
     bool ishunger = false;
 
     #region 플레이어 상태(체력 등...)
-    public int hp = 0;                      // 체력
+    public static int hp = 0;                      // 체력
     public int Maxhunger = 100;             // 허기
     public int currentHunger;
     public int chill = 0;                   // 한기
-    public int damage = 0;                  // 공격력
+    public static int damage = 0;                  // 공격력
     int weaponDamage = 150;                 // 무기에 받는 피해
 
     public bool isDead = false;
@@ -66,6 +73,32 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        HP.value = hp;
+        HG.value = currentHunger;
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            itemImage = GameObject.Find("ItemImg").GetComponent<Healing>().GetComponent<Image>();
+            if (itemImage.sprite.name == "equip_icon_potion_red_2")
+            {
+                hp += 50;
+                itemImage.sprite = usedImage.sprite;
+
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+
+        {
+            HGImage = GameObject.Find("HGImg").GetComponent<Meat>().GetComponent<Image>();
+            usedImage = GameObject.Find("UsedImg").GetComponent<Meat>().GetComponent<Image>();
+            if (HGImage.sprite.name == "icon_food_meat")
+            {
+                currentHunger += 50;
+                HGImage.sprite = usedImage.sprite;
+            }
+        }
+
         time += Time.deltaTime;
 
         Move();
@@ -376,7 +409,7 @@ public class Player : MonoBehaviour
         {
             if (time > 2f)
             {
-                currentHunger -= 1;
+                currentHunger -= 2;
                 time = 0;
 
                 Debug.Log(currentHunger);

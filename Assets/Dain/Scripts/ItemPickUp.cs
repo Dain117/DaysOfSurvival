@@ -16,11 +16,8 @@ public class ItemPickUp : MonoBehaviour
 
     private void Start()
     {
-        itemImage = GameObject.Find("ItemImg").GetComponent<Healing>().GetComponent<Image>();
-        usedImage = GameObject.Find("UsedImg").GetComponent<Meat>().GetComponent<Image>();
-        HGImage = GameObject.Find("HGImg").GetComponent<Meat>().GetComponent<Image>();
-        HGImage = GameObject.Find("HGImg").GetComponent<Meat>().GetComponent<Image>();
-        questUI = GameObject.Find("QuestText").GetComponent<TextMeshProUGUI>();
+        
+        
     }
 
     private void Update()
@@ -35,16 +32,21 @@ public class ItemPickUp : MonoBehaviour
 
             if (gameObject.GetComponent<ItemPickUp>().item.itemImage.name == "equip_icon_potion_red_2")
             {
+                itemImage = GameObject.Find("ItemImg").GetComponent<Healing>().GetComponent<Image>();
+                usedImage = GameObject.Find("UsedImg").GetComponent<Meat>().GetComponent<Image>();
                 itemImage.sprite = gameObject.GetComponent<ItemPickUp>().item.itemImage;
                 Destroy(gameObject);
             }
             else if (gameObject.GetComponent<ItemPickUp>().item.itemImage.name == "icon_food_meat")
             {
+                HGImage = GameObject.Find("HGImg").GetComponent<Meat>().GetComponent<Image>();
+                HGImage = GameObject.Find("HGImg").GetComponent<Meat>().GetComponent<Image>();
                 HGImage.sprite = gameObject.GetComponent<ItemPickUp>().item.itemImage;
                 Destroy(gameObject);
             }
             else if (gameObject.GetComponent<ItemPickUp>().item.itemName == "Twig")
-                Destroy(gameObject);
+            questUI = GameObject.Find("QuestText").GetComponent<TextMeshProUGUI>();
+            Destroy(gameObject);
                 twigCount++;
             questUI.text = $"Let's collect twig\n20 / {twigCount}";
         }

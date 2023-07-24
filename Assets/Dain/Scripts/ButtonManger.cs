@@ -8,9 +8,11 @@ public class ButtonManger : MonoBehaviour
     public GameObject Control;
     public GameObject Option;
     public GameObject Login;
+    public GameObject GameUI;
 
     private void Start()
     {
+        GameUI.SetActive(false);
         menu.SetActive(false);
         Control.SetActive(false);
         Option.SetActive(false);
@@ -22,16 +24,19 @@ public class ButtonManger : MonoBehaviour
     {
         menu.SetActive(true);
         Time.timeScale = 0f;
+        GameUI.SetActive(false);
     }
     public void ControlOpen()
     {
         Control.SetActive(true);
         Time.timeScale = 0f;
+        GameUI.SetActive(false);
     }
     public void OptionOpen()
     {
         Option.SetActive(true);
         Time.timeScale = 0f;
+        GameUI.SetActive(false);
     }
 
     public void Close()
@@ -41,6 +46,7 @@ public class ButtonManger : MonoBehaviour
         Option.SetActive(false);
         Login.SetActive(false);
         Time.timeScale = 1f;
+        GameUI.SetActive(true);
     }
 
     public void Exit()

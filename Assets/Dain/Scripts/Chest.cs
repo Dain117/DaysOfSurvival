@@ -46,7 +46,7 @@ public class Chest : MonoBehaviour
     {
         if (collision.gameObject.tag == "AttackPoint")
         {
-            hp -= (PlayerDain.damage);  
+            hp -= (Player.damage);  
         }
     }
 
