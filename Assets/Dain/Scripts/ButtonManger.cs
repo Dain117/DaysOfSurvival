@@ -7,7 +7,7 @@ public class ButtonManger : MonoBehaviour
     public GameObject menu;
     public GameObject Control;
     public GameObject Option;
-
+    public GameObject Login;
 
     private void Start()
     {
@@ -34,6 +34,7 @@ public class ButtonManger : MonoBehaviour
         menu.SetActive(false);
         Control.SetActive(false);
         Option.SetActive(false);
+        Login.SetActive(false);
     }
 
     private void Update()

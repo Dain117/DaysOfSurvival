@@ -116,6 +116,7 @@
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\DebugUI\Scripts\DebugUIBuilder.cs" />
     <Compile Include="Assets\Untouchable\Photon\PhotonChat\Demos\Common\TextToggleIsOnTransition.cs" />
     <Compile Include="Assets\Dain\Scripts\MagneticField.cs" />
+    <Compile Include="Assets\Dain\Scripts\ColorManager.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\DistanceGrab\Scripts\DistanceGrabberSample.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportPoint.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\Passthrough\Scripts\AugmentedObject.cs" />
@@ -133,6 +134,7 @@
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\DistanceGrab\Scripts\DistanceGrabbable.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\Passthrough\Scripts\SceneSampler.cs" />
     <Compile Include="Assets\JIwon\Scripts_Jiwon\enemy1.cs" />
+    <Compile Include="Assets\Dain\Scripts\Name.cs" />
     <Compile Include="Assets\Scripts\ARAVRInput\ARAVRInput.cs" />
     <Compile Include="Assets\Untouchable\Photon\PhotonChat\Demos\DemoChat\ChatGui.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\HandsInteraction\Scripts\ButtonController.cs" />
@@ -150,8 +152,8 @@
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\CustomHands\Scripts\HandPose.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\SpatialAnchor\Scripts\AnchorUIManager.cs" />
     <Compile Include="Assets\Dain\Scripts\ItemSpawn.cs" />
-    <Compile Include="Assets\Dain\Scripts\Healing.cs" />
     <Compile Include="Assets\Dain\Scripts\QuestText.cs" />
+    <Compile Include="Assets\Dain\Scripts\Healing.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\HandsInteraction\Scripts\Interactable.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\HandsInteraction\Scripts\Tools\InteractableTool.cs" />
     <Compile Include="Assets\Dain\Scripts\Chest.cs" />
