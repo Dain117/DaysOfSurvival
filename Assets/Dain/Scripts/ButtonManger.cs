@@ -7,26 +7,31 @@ public class ButtonManger : MonoBehaviour
     public GameObject menu;
     public GameObject Control;
     public GameObject Option;
-
+    public GameObject Login;
 
     private void Start()
     {
         menu.SetActive(false);
         Control.SetActive(false);
         Option.SetActive(false);
+        Login.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public void MenuOpen()
     {
         menu.SetActive(true);
+        Time.timeScale = 0f;
     }
     public void ControlOpen()
     {
         Control.SetActive(true);
+        Time.timeScale = 0f;
     }
     public void OptionOpen()
     {
         Option.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public void Close()
@@ -34,18 +39,14 @@ public class ButtonManger : MonoBehaviour
         menu.SetActive(false);
         Control.SetActive(false);
         Option.SetActive(false);
-    }
-
-    private void Update()
-    {
-        if(Input.GetKeyUp(KeyCode.Escape)) 
-        {
-            MenuOpen();
-        }
+        Login.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public void Exit()
     {
         Application.Quit();
+        Time.timeScale = 1f;
+
     }    
 }
