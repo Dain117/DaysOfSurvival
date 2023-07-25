@@ -32,7 +32,7 @@ public class TreeHP : MonoBehaviour
     {
         if (collision.gameObject.tag == "AttackPoint")
         {
-            hp -= (PlayerDain.damage);
+            hp -= (Player.damage);
         }
     }
 

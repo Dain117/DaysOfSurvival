@@ -176,7 +176,7 @@ public class Wolf : MonoBehaviour
         if (distanceToPlayer <= detectionRange)
         {
             // 공격 대상이 아직 detectionRange 안에 있으면 피해를 입힘
-            PlayerDain playerHealth = player.GetComponent<PlayerDain>();
+            Player playerHealth = player.GetComponent<Player>();
             if (playerHealth != null)
             {
                 playerHealth.Damaged(attackDamage);

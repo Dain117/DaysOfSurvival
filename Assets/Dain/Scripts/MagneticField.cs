@@ -15,7 +15,7 @@ public class MagneticField : MonoBehaviour
     void Update()
     {
         if (GameObject.Find("Game").GetComponent<TimeText>().night == false)
-        { radius = 0.1f; num = 100; Scale = 180;
+        { radius = 0.1f; num = 100; Scale = 150;
             field.transform.localScale = new Vector3(0, 0, 0);
 ;        }
 
