@@ -106,6 +106,7 @@
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\CowController.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\Locomotion\Scripts\SimpleCapsuleWithStickMovement.cs" />
     <Compile Include="Assets\Untouchable\Photon\PhotonChat\Demos\DemoChat\AppSettingsExtensions.cs" />
+    <Compile Include="Assets\Dain\Scripts\test.cs" />
     <Compile Include="Assets\Dain\Scripts\Item.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\SceneManager\Scripts\RequestCaptureFlow.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\Video\Scripts\MediaPlayerImage.cs" />
@@ -152,6 +153,7 @@
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\Passthrough\Scripts\HandMeshUI.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportOrientationHandlerHMD.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\SceneManager\Scripts\SimpleResizer\SimpleResizer.cs" />
+    <Compile Include="Assets\Dain\Scripts\PhotonManager.cs" />
     <Compile Include="Assets\Dain\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\Passthrough\Scripts\FlashlightController.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\Firebase\SampleUI.cs" />
@@ -211,6 +213,7 @@
     <Compile Include="Assets\Untouchable\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\Locomotion\Scripts\LocomotionTeleport.cs" />
     <Compile Include="Assets\Untouchable\Oculus\Voice\Lib\Wit.ai\AssemblyInfo.cs" />
+    <Compile Include="Assets\JIwon\Scripts_Jiwon\ConnManager.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\ControllerBoxController.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\TouchControllers\TouchController.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\Firebase\StartCrashlytics.cs" />
@@ -232,12 +235,12 @@
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\HandsInteraction\Scripts\ButtonTriggerZone.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrainCarBase.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\Firebase\AnalyticsUI.cs" />
-    <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrainTrack.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportOrientationHandler.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrainButtonVisualController.cs" />
     <Compile Include="Assets\Minsup\AnimalSpawner.cs" />
     <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\SpatialAnchor\Scripts\AnchorSession.cs" />
     <Compile Include="Assets\Dain\Scripts\Meat.cs" />
+    <Compile Include="Assets\Untouchable\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrainTrack.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Untouchable\Oculus\SampleFramework\Usage\HandsTrainExample\Shaders\XingLightShader.shader" />
@@ -1061,6 +1064,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{2E5893C0-A710-88FB-0EE2-46CF1F54DACC}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="Oculus.LipSync.Editor.csproj">
       <Project>{FD1BF2E5-E663-7C14-C7D4-5ED7B3735F8B}</Project>
       <Name>Oculus.LipSync.Editor</Name>

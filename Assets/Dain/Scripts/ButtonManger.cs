@@ -17,7 +17,7 @@ public class ButtonManger : MonoBehaviour
         Control.SetActive(false);
         Option.SetActive(false);
         Login.SetActive(true);
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
     }
 
     public void MenuOpen()

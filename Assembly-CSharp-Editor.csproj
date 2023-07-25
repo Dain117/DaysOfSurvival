@@ -859,9 +859,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{2E5893C0-A710-88FB-0EE2-46CF1F54DACC}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{FB51475B-AA41-77C8-B765-DA3D84248E7F}</Project>
       <Name>Assembly-CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
+      <Project>{88B6E101-4470-6DFF-6AF0-A3CA78DC1F43}</Project>
+      <Name>Assembly-CSharp-Editor-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.LipSync.Editor.csproj">
       <Project>{FD1BF2E5-E663-7C14-C7D4-5ED7B3735F8B}</Project>

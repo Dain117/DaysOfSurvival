@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
-        gameObject.transform.position = gameManager.spawnPoint.transform.position;
+       // gameObject.transform.position = gameManager.spawnPoint.transform.position;
         characterController = GetComponent<CharacterController>();
         hp = 100;
         currentHunger = 100;
