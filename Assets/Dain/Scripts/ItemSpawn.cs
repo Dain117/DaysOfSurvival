@@ -37,7 +37,7 @@ public class ItemSpawn : MonoBehaviour
     {
         while (true) 
         { 
-        yield return new WaitForSeconds(60f);
+        yield return new WaitForSeconds(30f);
             GameObject instantChest = Instantiate(Chest, Return_RandomPosition(), Quaternion.identity);
         }
     }

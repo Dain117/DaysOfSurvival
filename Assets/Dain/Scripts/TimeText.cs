@@ -27,8 +27,8 @@ public class TimeText : MonoBehaviour
     {
         night = false;
         isStart = true;
-        dayTime = 30;
-        nightTime = 30f;
+        dayTime = 180;
+        nightTime = 120f;
         //twigCount = GameObject.FindWithTag("Item").GetComponent<ItemPickUp>().twigCount;
     }
 
@@ -52,7 +52,7 @@ public class TimeText : MonoBehaviour
             StartCoroutine(AddDamage());
             sky.SetActive(false);
             sunGroup.SetActive(false);
-            light.intensity += Time.deltaTime / dayTime;
+            light.intensity += Time.deltaTime /nightTime;
             dayText.text = "";
             nightTime -= Time.deltaTime;
             nightText.text = nightTime.ToString("F0");
@@ -60,11 +60,10 @@ public class TimeText : MonoBehaviour
         else if (dayTime <= 0 && nightTime <= 0)
         {
             twigCount = 0;
-            dayTime = 30f;
-            nightTime = 30f;
+            dayTime = 180f;
+            nightTime = 120f;
         }
 
-        //Quest.text = ItemPickUp.twigCount.ToString();
 
     }
 

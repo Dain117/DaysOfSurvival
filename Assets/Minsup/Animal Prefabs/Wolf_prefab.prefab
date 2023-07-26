@@ -510,7 +510,7 @@ MonoBehaviour:
   attackDamage: 5
   attackInterval: 3
   attackRange: 3
-  meatPrefab: {fileID: 162201299146550464, guid: 1b759375e9ede3b42bf25463f72e4ab4, type: 3}
+  meatPrefab: {fileID: 1157597431963335279, guid: 324667bdf9396004ab5d9ff027e25898, type: 3}
   changeDestinationInterval: 3
 --- !u!1 &2380581516944689017
 GameObject:

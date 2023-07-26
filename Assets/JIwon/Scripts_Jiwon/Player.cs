@@ -23,12 +23,16 @@ public class Player : MonoBehaviour
     public GameObject DeathAnim;
     public Transform objPosition;
 
-    public Slider HP;
-    public Slider HG;
+    #region 체력바 UI
+    public Slider HP; // 체력 슬라이더
+    public Slider HG; // 허기 슬라이더
+    #endregion
 
-    public Image itemImage;
-    public Image usedImage;
-    public Image HGImage;
+    #region 아이템창 UI
+    public Image itemImage; //체력 아이템 창
+    public Image usedImage; //아이템 사용시 뜰 빈 이미지
+    public Image HGImage; //허기 아이템 창
+    #endregion
 
     public float speed = 5f;
     public float gravity = -20;
@@ -73,31 +77,37 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        #region 체력바 연결
         HP.value = hp;
         HG.value = currentHunger;
+        #endregion
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        #region 아이템 사용
+        if (Input.GetKeyDown(KeyCode.Q)) //지원님 이거 키 바꿔주세요  
         {
-            itemImage = GameObject.Find("ItemImg").GetComponent<Healing>().GetComponent<Image>();
-            if (itemImage.sprite.name == "equip_icon_potion_red_2")
+            itemImage = GameObject.Find("ItemImg").GetComponent<Healing>().GetComponent<Image>(); //체력아이템 UI 이미지를 컴포넌트
+            if (itemImage.sprite.name == "equip_icon_potion_red_2") // 만약 그 이미지의 이름이 equip_icon_potion_red_2 라면...
             {
-                hp += 50;
-                itemImage.sprite = usedImage.sprite;
+                hp += 50; //체력 50회복
+                itemImage.sprite = usedImage.sprite; //아이템을 사용했으면 빈이미지로 바꿈
 
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W)) //지원님 이것도 키 바꿔주세요
 
         {
-            HGImage = GameObject.Find("HGImg").GetComponent<Meat>().GetComponent<Image>();
-            usedImage = GameObject.Find("UsedImg").GetComponent<Meat>().GetComponent<Image>();
-            if (HGImage.sprite.name == "icon_food_meat")
+            HGImage = GameObject.Find("HGImg").GetComponent<Meat>().GetComponent<Image>(); //고기아이템 UI 이미지를 컴포넌트
+            usedImage = GameObject.Find("UsedImg").GetComponent<Meat>().GetComponent<Image>();  //빈아이템 UI 이미지 컴포넌트
+            if (HGImage.sprite.name == "icon_food_meat") //만약 그 이미지의 이름이 icon_food_meat 라면..
             {
-                currentHunger += 50;
-                HGImage.sprite = usedImage.sprite;
+                currentHunger += 30;  //허기 30 회복
+                {
+                    HGImage.sprite = usedImage.sprite; //아이템을 사용했으면 빈이미지로 바꿈
+                }
             }
         }
+        #endregion
 
         time += Time.deltaTime;
 

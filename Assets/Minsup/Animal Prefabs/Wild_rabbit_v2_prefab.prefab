@@ -491,7 +491,7 @@ MonoBehaviour:
   runSpeed: 3
   detectionRange: 5
   maxHP: 20
-  meatPrefab: {fileID: 1514259955014810247, guid: c1407df61204ac24c8420568fc4f4469, type: 3}
+  meatPrefab: {fileID: 1157597431963335279, guid: 324667bdf9396004ab5d9ff027e25898, type: 3}
 --- !u!64 &8576183098189685679
 MeshCollider:
   m_ObjectHideFlags: 0

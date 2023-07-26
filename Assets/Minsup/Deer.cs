@@ -6,17 +6,20 @@ using UnityEngine.UI;
 
 public class Deer : MonoBehaviour
 {
+
     public float normalSpeed = 3.5f; // 사슴의 기본 속도
     public float runSpeed = 5.5f; // 사슴의 도망 속도
     public float detectionRange = 8f; // 플레이어를 감지하는 거리
-    public int maxHP = 40; // 사슴의 최대 체력
+    private int maxHP = 40; // 사슴의 최대 체력
 
     public GameObject meatPrefab; //고기 오브젝트의 프리팹
 
     private Transform player; // 플레이어의 위치
-    private int currentHP; // 사슴의 현재 체력
+    public int currentHP; // 사슴의 현재 체력
     private NavMeshAgent navMeshAgent;
     private Animator animator;
+
+    public Slider hpSlider;
 
 
     private void Start()
@@ -36,6 +39,8 @@ public class Deer : MonoBehaviour
 
     private void Update()
     {
+        hpSlider.value = currentHP;
+
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
         // 플레이어가 일정 거리 안에 들어왔을 때
@@ -80,13 +85,11 @@ public class Deer : MonoBehaviour
         navMeshAgent.SetDestination(hit.position);
     }
 
-    public void TakeDamage(int damage)
+    private void OnCollisionEnter(Collision collision)
     {
-        currentHP -= damage;
-
-        if (currentHP <= 0)
+        if (collision.gameObject.tag == "AttackPoint")
         {
-            Die();
+            currentHP -= (Player.damage);
         }
     }
 
